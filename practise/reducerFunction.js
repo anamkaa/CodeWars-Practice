@@ -31,3 +31,26 @@ const biggestNum = (arr) => {
   return x;
 };
 biggestNum(arr);
+
+//--------------------------------
+
+var str = ["apple","orange","mango","papaya"];
+
+//return an array with strings which have vowels
+const strVow = str => str.includes('a','e','i','o','u');
+str.filter(strVow);
+
+//return an array of objects with key as item and value as number of characters in the string
+// Defining a key as a variable -> 
+// let keyName = 'dynamicKey'; let obj = { [keyName]: 'value' };
+var strToObj = str => ({[str] : str.length});
+str.map(strToObj);
+
+//find the number of strings with same length or with similar number of characters , output -> {5:2, 6:2}
+var lengthCount = i => i.length;
+var strWithLenCount = str.map(lengthCount);
+var objWithLenthCount = {};
+strWithLenCount.forEach((i) => {
+  objWithLenthCount[i] = (objWithLenthCount[i] || 0) + 1;
+});
+console.log(objWithLenthCount);
